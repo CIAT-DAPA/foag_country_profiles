@@ -1,0 +1,31 @@
+Reference,Neighbours,Countries,ISO
+HND,Geographic neighboring,Nicaragua,NIC
+HND,Geographic neighboring,El Salvador,SLV
+HND,Geographic neighboring,Belizes,BLZ
+HND,Geographic neighboring,Guatemala,GTM
+HND,Geographic neighboring,Costa Rica,CRI
+HND,Geographic neighboring,Panama,PAN
+HND,GDP pc comparable,Laos,LAO
+HND,GDP pc comparable,Vietnam,VNM
+HND,GDP pc comparable,Ivory Coast,CIV
+HND,GDP pc comparable,Ghana,GHA
+HND,GDP pc comparable,India,IND
+BGD,Geographic neighboring,Myanmar,MMR
+BGD,Geographic neighboring,India,IND
+BGD,Geographic neighboring,Bhutan,BTN
+BGD,Geographic neighboring,Nepal,NPL
+BGD,GDP pc comparable,Kenya,KEN
+BGD,GDP pc comparable,Nicaragua,NIC
+BGD,GDP pc comparable,Haiti,HTI
+BGD,GDP pc comparable,India,IND
+BGD,GDP pc comparable,Angola,AGO
+ETH,Geographic neighboring,Somalia,SOM
+ETH,Geographic neighboring,Kenya,KEN
+ETH,Geographic neighboring,Sudan,SDN
+ETH,Geographic neighboring,South Sudan,SSD
+ETH,Geographic neighboring,Erithrea,ERI
+ETH,GDP pc comparable,Uganda,UGA
+ETH,GDP pc comparable,Burkina Faso,BFA
+ETH,GDP pc comparable,Mali,MLI
+ETH,GDP pc comparable,Zambia,ZMB
+ETH,GDP pc comparable,Guinea Bissau,GNB
