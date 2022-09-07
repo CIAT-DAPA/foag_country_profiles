@@ -50,7 +50,7 @@
 <line x1='220.48' y1='472.32' x2='574.26' y2='600.53' style='stroke-width: 3.41; stroke: #6BA0C7; stroke-linecap: butt;' />
 <circle cx='220.48' cy='61.09' r='23.83' style='stroke-width: 0.71; stroke: #E3ABA7; fill: #E3ABA7;' />
 <circle cx='220.48' cy='472.32' r='23.83' style='stroke-width: 0.71; stroke: #B1615C; fill: #B1615C;' />
-<circle cx='574.26' cy='399.75' r='23.83' style='stroke-width: 0.71; stroke: #C9C9DD; fill: #C9C9DD;' />
+<circle cx='574.26' cy='399.75' r='23.83' style='stroke-width: 0.71; stroke: #8282AA; fill: #8282AA;' />
 <circle cx='574.26' cy='600.53' r='23.83' style='stroke-width: 0.71; stroke: #B1615C; fill: #B1615C;' />
 <text x='187.28' y='67.20' text-anchor='end' style='font-size: 17.07px; font-family: "Arial";' textLength='33.21px' lengthAdjust='spacingAndGlyphs'>24.8</text>
 <text x='196.77' y='478.43' text-anchor='end' style='font-size: 17.07px; font-family: "Arial";' textLength='23.72px' lengthAdjust='spacingAndGlyphs'>7.8</text>
@@ -58,15 +58,18 @@
 <text x='597.97' y='606.64' style='font-size: 17.07px; font-family: "Arial";' textLength='23.72px' lengthAdjust='spacingAndGlyphs'>2.5</text>
 </g>
 <g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw3MjAuMDA=)'>
-<circle cx='164.28' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #B1615C; fill: #B1615C;' />
-<circle cx='164.28' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #B1615C; fill: #B1615C;' />
-<circle cx='331.75' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #E3ABA7; fill: #E3ABA7;' />
-<circle cx='331.75' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #E3ABA7; fill: #E3ABA7;' />
-<circle cx='583.48' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #C9C9DD; fill: #C9C9DD;' />
-<circle cx='583.48' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #C9C9DD; fill: #C9C9DD;' />
-<text x='203.93' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='88.16px' lengthAdjust='spacingAndGlyphs'>Global average</text>
-<text x='371.39' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='172.43px' lengthAdjust='spacingAndGlyphs'>Countries with similar GDP pc</text>
-<text x='623.13' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='46.98px' lengthAdjust='spacingAndGlyphs'>Ethiopia</text>
+<circle cx='60.68' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #B1615C; fill: #B1615C;' />
+<circle cx='60.68' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #B1615C; fill: #B1615C;' />
+<circle cx='228.14' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #E3ABA7; fill: #E3ABA7;' />
+<circle cx='228.14' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #E3ABA7; fill: #E3ABA7;' />
+<circle cx='479.87' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #C9C9DD; fill: #C9C9DD;' />
+<circle cx='479.87' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #C9C9DD; fill: #C9C9DD;' />
+<circle cx='687.08' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #8282AA; fill: #8282AA;' />
+<circle cx='687.08' cy='677.86' r='23.83' style='stroke-width: 0.71; stroke: #8282AA; fill: #8282AA;' />
+<text x='100.33' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='88.16px' lengthAdjust='spacingAndGlyphs'>Global average</text>
+<text x='267.79' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='172.43px' lengthAdjust='spacingAndGlyphs'>Countries with similar GDP pc</text>
+<text x='519.52' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='127.91px' lengthAdjust='spacingAndGlyphs'>Geographic neighbors</text>
+<text x='726.73' y='682.51' style='font-size: 13.00px; font-family: "Arial";' textLength='46.98px' lengthAdjust='spacingAndGlyphs'>Ethiopia</text>
 <text x='8.22' y='23.38' style='font-size: 25.00px; font-family: "Arial";' textLength='518.23px' lengthAdjust='spacingAndGlyphs'>FDI inflows to Agriculture, Forestry and Fishing</text>
 </g>
 </svg>

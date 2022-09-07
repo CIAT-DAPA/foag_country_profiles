@@ -62,11 +62,12 @@
 <polyline points='674.65,473.01 674.65,26.71 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
 <polyline points='748.20,473.01 748.20,26.71 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
 <polyline points='821.75,473.01 821.75,26.71 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='86.26,440.53 159.81,366.74 233.35,434.85 306.90,391.34 ' style='stroke-width: 2.56; stroke: #DD5129; stroke-linecap: butt;' />
+<polyline points='86.26,440.53 159.81,367.50 233.35,434.85 306.90,391.34 ' style='stroke-width: 2.56; stroke: #DD5129; stroke-linecap: butt;' />
 <polyline points='454.00,451.88 527.55,325.12 601.10,364.85 ' style='stroke-width: 2.56; stroke: #DD5129; stroke-linecap: butt;' />
-<polyline points='86.26,201.67 159.81,206.55 233.35,212.86 306.90,214.12 380.45,200.88 454.00,220.30 527.55,228.63 601.10,233.04 674.65,251.33 748.20,253.85 821.75,247.55 ' style='stroke-width: 2.56; stroke: #0F7BA2; stroke-linecap: butt;' />
+<polyline points='748.20,405.53 821.75,405.53 ' style='stroke-width: 2.56; stroke: #DD5129; stroke-linecap: butt;' />
+<polyline points='86.26,201.67 159.81,224.84 233.35,212.86 306.90,214.12 380.45,200.88 454.00,220.30 527.55,228.63 601.10,233.04 674.65,251.33 748.20,253.85 821.75,247.55 ' style='stroke-width: 2.56; stroke: #0F7BA2; stroke-linecap: butt;' />
 <polyline points='86.26,139.71 159.81,105.65 233.35,47.00 306.90,48.89 380.45,115.11 454.00,158.62 527.55,168.08 601.10,168.08 674.65,175.65 748.20,185.11 821.75,198.36 ' style='stroke-width: 2.56; stroke: #43B284; stroke-linecap: butt;' />
-<polyline points='86.26,413.54 159.81,439.27 233.35,439.03 306.90,436.55 380.45,434.01 454.00,441.51 527.55,425.69 601.10,437.55 674.65,441.81 748.20,452.73 821.75,357.28 ' style='stroke-width: 2.56; stroke: #FAB255; stroke-linecap: butt;' />
+<polyline points='86.26,413.54 159.81,397.04 233.35,439.03 306.90,436.55 380.45,434.01 454.00,441.51 527.55,425.69 601.10,437.55 674.65,441.81 748.20,452.73 821.75,440.82 ' style='stroke-width: 2.56; stroke: #FAB255; stroke-linecap: butt;' />
 <rect x='49.48' y='26.71' width='809.04' height='446.30' style='stroke-width: 1.07; stroke: #333333;' />
 </g>
 <g clip-path='url(#cpMC4wMHw4NjQuMDB8MC4wMHw1NzYuMDA=)'>

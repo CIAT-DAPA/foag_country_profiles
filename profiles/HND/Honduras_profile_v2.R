@@ -11,95 +11,31 @@ root <- '.'
 sts <- 1:30 %>%
   purrr::map(.f = function(i){
     
-    rch <- readxl::read_excel(path = paste0(root,'/2021/profiles/HND/results/HND_calculations_v2.xlsx'), sheet = i)
-    rcs <- grep(pattern = '^RC', x = names(rch))
-    rcs2 <- match(gsub(pattern = 'RC', replacement = 'Y', x = names(rch)[rcs]), names(rch))
-    if(length(rcs2) == 10 & class(rch %>% dplyr::pull(3)) != 'character'){ rcs2 <- c(rcs2[1]-1,rcs2) }
-    yrs <- gsub(pattern = 'Y', replacement = '', x = names(rch)[c(rcs2[1], rcs2[length(rcs2)])])
-    lwr <- as.numeric(yrs) - 2
-    upp <- as.numeric(yrs) + 2
-    
-    lw <- paste0('Y',lwr[1]:upp[1])
-    up <- paste0('Y',lwr[2]:upp[2])
-    lw <- lw[lw %in% names(rch)]
-    up <- up[up %in% names(rch)]
-    
-    if(identical(yrs[1],yrs[2])){ # One year
-      ref <- rch[,c(paste0('Y',unique(yrs)),'rate_of_change', 'rate_of_change_cleaned','Neighbours')]
-      sts <- rbind(ref %>%
-                     dplyr::filter(Neighbours != 'World') %>%
-                     dplyr::group_by(Neighbours) %>%
-                     dplyr::summarise_all(mean, na.rm = T),
-                   ref %>%
-                     dplyr::mutate(Neighbours = 'World') %>%
-                     dplyr::group_by(Neighbours) %>%
-                     dplyr::summarise_all(mean, na.rm = T)) %>% base::as.data.frame()
-       sts$New <- sts[,2]
-       names(sts)[ncol(sts)] <- names(sts)[2]
-       sts <- sts[,c(names(sts)[1:2],names(sts)[ncol(sts)],names(sts)[3:4])]
-       names(sts)[2:3] <- paste0('Y',yrs)
-    } else { # More than one year
-      # Solution of what they want:
-      # https://stackoverflow.com/questions/52678707/select-non-missing-values-row-wise-from-columns-closest-to-a-given-column
-      # Table of interest
-      if(!(i %in% c(11,14,18))){
-        ## Past alternative
-        # lw_avg <- rowMeans(x = rch[,lw], na.rm = T)
-        # up_avg <- rowMeans(x = rch[,up], na.rm = T)
-        # ref <- rch[,c(paste0('Y',yrs),'rate_of_change', 'rate_of_change_cleaned','Neighbours')]
-        # ref[,paste0('Y',yrs)] <- data.frame(lw_avg, up_avg)
-        ## New alternative: finding the closest non-missing value to replace
-        lw_vals <- rch[,c('ISO',lw)] %>%
-          tidyr::pivot_longer(cols = 2:ncol(.), names_to = 'year', values_to = 'value') %>%
-          dplyr::mutate(year = as.numeric(gsub('Y','',year))) %>%
-          dplyr::mutate(distance = abs(year - as.numeric(yrs[1]))) %>%
-          dplyr::filter(!is.na(value)) %>%
-          dplyr::group_by(ISO) %>%
-          dplyr::filter(distance == min(distance)) %>%
-          dplyr::filter(row_number() == min(row_number()))
-        
-        up_vals <- rch[,c('ISO',up)] %>%
-          tidyr::pivot_longer(cols = 2:ncol(.), names_to = 'year', values_to = 'value') %>%
-          dplyr::mutate(year = as.numeric(gsub('Y','',year))) %>%
-          dplyr::mutate(distance = abs(year - as.numeric(yrs[2]))) %>%
-          dplyr::filter(!is.na(value)) %>%
-          dplyr::group_by(ISO) %>%
-          dplyr::filter(distance == min(distance)) %>%
-          dplyr::filter(row_number() == min(row_number()))
-        
-        ref <- dplyr::full_join(x = lw_vals %>% dplyr::select(-year,-distance) %>% dplyr::rename(Initial = value),
-                                y = up_vals %>% dplyr::select(-year,-distance) %>% dplyr::rename(Recent = value),
-                                by = 'ISO')
-        ref <- dplyr::left_join(x = ref,
-                                y = rch[,c('ISO','rate_of_change','rate_of_change_cleaned','Neighbours')],
-                                by = 'ISO') %>%
-          dplyr::ungroup() %>%
-          dplyr::select(-ISO) %>%
-          base::as.data.frame()
-      } else {
-        ref <- rch[,c(paste0('Y',yrs),'rate_of_change', 'rate_of_change_cleaned','Neighbours')]
-      }
-      sts <- rbind(ref %>%
-                     dplyr::filter(Neighbours != 'World') %>%
-                     dplyr::group_by(Neighbours) %>%
-                     dplyr::summarise_all(mean, na.rm = T),
-                   ref %>%
-                     dplyr::mutate(Neighbours = 'World') %>%
-                     dplyr::group_by(Neighbours) %>%
-                     dplyr::summarise_all(mean, na.rm = T)) %>% base::as.data.frame()
-    }
+    ref <- readxl::read_excel(path = paste0(root,'/2021/profiles/HND/results/HND_calculations_v2.xlsx'), sheet = i) %>% base::as.data.frame()
+    ind <- unique(as.character(ref[,3]))
+    per <- paste0(median(ref$Initial_year, na.rm = T),'-',median(ref$Recent_year, na.rm = T))
+    lst <- median(ref$Recent_year, na.rm = T)
+    ref <- ref[,c('Initial','Recent','rate_of_change','rate_of_change_cleaned','Neighbours')]
+    sts <- rbind(ref %>%
+                   dplyr::filter(Neighbours != 'World') %>%
+                   dplyr::group_by(Neighbours) %>%
+                   dplyr::summarise_all(mean, na.rm = T),
+                 ref %>%
+                   dplyr::mutate(Neighbours = 'World') %>%
+                   dplyr::group_by(Neighbours) %>%
+                   dplyr::summarise_all(mean, na.rm = T)) %>% base::as.data.frame()
     
     names(sts) <- c('Group','Initial','Recent','Mean_delta','Cleaned_mean_delta')
-    sts$Indicator <- rch %>% base::as.data.frame() %>% .[,3] %>% unique()
+    sts$Indicator <- ind; rm(ind)
     sts$Order <- paste0('Indicator',i)
-    sts$Period <- paste(yrs, collapse = '-')
-    sts$Last_year <- yrs[2]
+    sts$Period <- per; rm(per)
+    sts$Last_year  <- lst; rm(lst)
     sts <- sts %>% dplyr::mutate_if(is.numeric, round, 1)
     sts$Group <- factor(x = sts$Group,
                         levels = c('World','GDP pc comparable','Geographic neighboring','Honduras'),
                         labels = c('Global average','Countries with similar GDP pc','Geographic neighbors','Honduras'),
                         ordered = T)
-    return(sts)
+    return(sts) # sts; cat(i,'\n')
     
   }) %>%
   dplyr::bind_rows()
