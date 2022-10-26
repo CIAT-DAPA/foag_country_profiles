@@ -5,7 +5,7 @@ options(warn = -1, scipen = 999)    # Remove warning alerts and scientific notat
 suppressMessages(if(!require(pacman)){install.packages('pacman');library(pacman)} else {library(pacman)})
 suppressMessages(pacman::p_load(tidyverse, MetBrewer))
 
-root <- '.'
+root <- 'D:/OneDrive - CGIAR/Sustainable Food Systems'
 
 # Summarizing metrics
 sts <- 1:30 %>%

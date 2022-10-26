@@ -5,7 +5,7 @@ options(warn = -1, scipen = 999)    # Remove warning alerts and scientific notat
 suppressMessages(if(!require(pacman)){install.packages('pacman');library(pacman)} else {library(pacman)})
 suppressMessages(pacman::p_load(tidyverse, MetBrewer))
 
-root <- '.'
+root <- 'D:/OneDrive - CGIAR/Sustainable Food Systems'
 
 # Summarizing metrics
 sts <- 1:30 %>%
@@ -30,7 +30,7 @@ sts <- 1:30 %>%
     sts$Order <- paste0('Indicator',i)
     sts$Period <- per; rm(per)
     sts$Last_year  <- lst; rm(lst)
-    sts <- sts %>% dplyr::mutate_if(is.numeric, round, 1)
+    sts <- sts %>% dplyr::mutate_if(is.numeric, round, 3)
     sts$Group <- factor(x = sts$Group,
                         levels = c('World','GDP pc comparable','Geographic neighboring','Ethiopia'),
                         labels = c('Global average','Countries with similar GDP pc','Geographic neighbors','Ethiopia'),

@@ -5,7 +5,7 @@ options(warn = -1, scipen = 999)    # Remove warning alerts and scientific notat
 suppressMessages(library(pacman))
 suppressMessages(pacman::p_load(tidyverse, car, OutliersO3))
 
-root <- '.'
+root <- 'D:/OneDrive - CGIAR/Sustainable Food Systems'
 
 # Summary table
 smy <- readxl::read_excel(path = paste0(root,'/2021/profiles/ETH/data_revised/Ethiopia_indicators.xlsx'), sheet = 'Resume')
